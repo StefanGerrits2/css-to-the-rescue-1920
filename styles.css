@@ -1,0 +1,81 @@
+body * {
+    margin: 0em auto;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 2em;
+}
+
+summary:focus {
+    outline: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    text-align: center;
+    width: 20em;
+    position: relative;
+}
+
+article {
+    margin-bottom: 1em;
+}
+
+/* Images */
+/* Mustard image */
+main img:nth-child(1){
+    position: absolute;
+    width: 10em;
+    left: 10em;
+    transform: rotate(20deg);
+}
+
+/* Stains */
+section img {
+    animation: 5s showSauce;
+    position: absolute;
+    width: 5em;
+    transition: opacity 2s ease-in-out;
+}
+
+section img:nth-child(1) {
+    left: 5em;
+    top: 3em;
+    width: 6em;
+}
+
+section img:nth-child(2) {
+    left: 5em;
+    top: 14em;
+    width: 6em;
+}
+
+section img:nth-child(3) {
+    left: 6em;
+    top: 16em;
+    width: 6em;
+}
+
+section img:hover {
+    opacity: 0;
+    cursor:url("./src/images/wipe.png"), auto;
+}
+
+/* Keyframes */
+@keyframes showSauce {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
