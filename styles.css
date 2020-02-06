@@ -1,12 +1,28 @@
+@font-face {
+    font-family: Hanged-letters;
+    src: url(./src/fonts/Hanged\ Letters.ttf);
+}
+
 body * {
     margin: 0em auto;
     text-align: center;
+}
+
+h1 {
+    font-family: Hanged-letters;
+    font-size: 3em;
+    animation: float 4s infinite ease-in-out;
+    
 }
 
 header {
     margin-bottom: 2em;
 }
 
+header > p {
+    margin-top: 1em;
+}
++*
 summary:focus {
     outline: none;
 }
@@ -30,13 +46,31 @@ article {
     margin-bottom: 1em;
 }
 
+input {
+    display: none;
+}
+
 /* Images */
 /* Mustard image */
-main img:nth-child(1){
+main div label img {
+    cursor: pointer;
+    transition: 2s;      
+}
+
+main > div {
     position: absolute;
     width: 10em;
     left: 10em;
-    transform: rotate(20deg);
+}
+
+/* Checkbox for mustard image */
+main > div > label > input[type="checkbox"]:checked ~ img {
+    transform: rotate(90deg);
+    transition: 2s;
+}
+
+main > div > label > input[type="checkbox"]:checked main > div{
+    left: 20em;
 }
 
 /* Stains */
@@ -60,7 +94,7 @@ section img:nth-child(2) {
 }
 
 section img:nth-child(3) {
-    left: 6em;
+    left: 7em;
     top: 16em;
     width: 6em;
 }
@@ -77,5 +111,28 @@ section img:hover {
     }
     100% {
       opacity: 1;
+    }
+}
+
+@keyframes float {
+	0% {
+        transform: translatey(0px);
+        letter-spacing: 5px
+    }
+    25% {
+        transform: translatey(-10px);
+        letter-spacing: 10px;
+	}
+	50% {
+        transform: translatey(-20px);
+        letter-spacing: 5px;
+    }
+    75% {
+        transform: translatey(-10px);
+        letter-spacing: 10px;
+	}
+	100% {
+        transform: translatey(0px);
+        letter-spacing: 5px;
     }
 }
