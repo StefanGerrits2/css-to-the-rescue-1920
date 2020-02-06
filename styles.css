@@ -3,47 +3,87 @@
     src: url(./src/fonts/Hanged\ Letters.ttf);
 }
 
-body * {
-    margin: 0em auto;
-    text-align: center;
+@font-face {
+    font-family: Restaurant;
+    src: url(./src/fonts/Momsdiner-ljjX.ttf);
 }
 
-h1 {
+body {
+    background-color: #EFEFEF;
+    color: #7E7E7F
+}
+
+header label > h1 {
     font-family: Hanged-letters;
     font-size: 3em;
     animation: float 4s infinite ease-in-out;
-    
+    cursor: pointer;
+    transition: 4s;
+    color: black;
+    text-align: center;
 }
 
-header {
-    margin-bottom: 2em;
+header > header {
+    position: absolute;
+    text-align: center;
+    z-index: 20;
 }
 
-header > p {
+header > input[type="checkbox"]:checked + label  {
+    position: absolute;
+    transition: 2s ease-in;
+    animation: fall 1s;
+    left: 33%;
+}
+
+header > label > h1 {
+    margin-top: 0em;
+}
+
+header > input[type="checkbox"]:checked + label h1  {
+    position: absolute;
+    margin-top: 27em;
+    letter-spacing: 70px;
+    transition: 2s ease-in;
+    animation: fall 1s;
+}
+
+main > section:first-child  {
     margin-top: 1em;
-}
-+*
-summary:focus {
-    outline: none;
-}
-
-summary::-webkit-details-marker {
-    display: none;
+    text-align: center;
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
+    margin-top: -2em;
 }
 
 section {
     text-align: center;
     width: 20em;
     position: relative;
+    border-width: 20px;
+    border-style: solid;
+    border-image: url(./src/images/border-img.svg) 22%;
+    padding: 1em;
+    margin: 0em auto;
 }
 
 article {
     margin-bottom: 1em;
+}
+
+h2 {
+    font-family: Restaurant;
+}
+
+summary:focus {
+    outline: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
 }
 
 input {
@@ -65,17 +105,13 @@ main > div {
 
 /* Checkbox for mustard image */
 main > div > label > input[type="checkbox"]:checked ~ img {
-    transform: rotate(90deg);
+    transform: rotate(90deg) translateX(150px);
     transition: 2s;
-}
-
-main > div > label > input[type="checkbox"]:checked main > div{
-    left: 20em;
 }
 
 /* Stains */
 section img {
-    animation: 5s showSauce;
+    animation: 3s showSauce;
     position: absolute;
     width: 5em;
     transition: opacity 2s ease-in-out;
@@ -101,7 +137,7 @@ section img:nth-child(3) {
 
 section img:hover {
     opacity: 0;
-    cursor:url("./src/images/wipe.png"), auto;
+    cursor:url("./src/images/cursor.png"), auto;
 }
 
 /* Keyframes */
@@ -134,5 +170,14 @@ section img:hover {
 	100% {
         transform: translatey(0px);
         letter-spacing: 5px;
+    }
+}
+
+@keyframes fall {
+	0% {
+        letter-spacing: 25px
+    }
+	100% {
+        letter-spacing: 70px;
     }
 }
