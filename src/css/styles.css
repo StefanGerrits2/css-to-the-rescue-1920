@@ -1,16 +1,23 @@
+@import "keyframes.css";
+
 @font-face {
     font-family: Hanged-letters;
-    src: url(./src/fonts/Hanged\ Letters.ttf);
+    src: url(/src/fonts/Hanged\ Letters.ttf);
 }
 
 @font-face {
     font-family: Restaurant;
-    src: url(./src/fonts/Momsdiner-ljjX.ttf);
+    src: url(/src/fonts/Momsdiner-ljjX.ttf);
 }
 
 body {
     background-color: #EFEFEF;
-    color: #7E7E7F
+    color: #7E7E7F;
+    margin: 0em;
+}
+
+header > div {
+    position: absolute;
 }
 
 header label > h1 {
@@ -18,34 +25,31 @@ header label > h1 {
     font-size: 3em;
     animation: float 4s infinite ease-in-out;
     cursor: pointer;
-    transition: 4s;
-    color: black;
     text-align: center;
+    margin-top: .22em;
+    margin-bottom: 2em;
 }
 
 header > header {
     position: absolute;
     text-align: center;
-    z-index: 20;
+    z-index: 2;
 }
 
 header > input[type="checkbox"]:checked + label  {
     position: absolute;
     transition: 2s ease-in;
     animation: fall 1s;
-    left: 33%;
-}
-
-header > label > h1 {
-    margin-top: 0em;
+    left: 27%;
 }
 
 header > input[type="checkbox"]:checked + label h1  {
     position: absolute;
-    margin-top: 27em;
+    margin-top: 47em;
     letter-spacing: 70px;
     transition: 2s ease-in;
     animation: fall 1s;
+    z-index: 3;
 }
 
 main > section:first-child  {
@@ -56,16 +60,17 @@ main > section:first-child  {
 main {
     display: flex;
     flex-wrap: wrap;
+    margin: 0em auto;
     margin-top: -2em;
 }
 
 section {
     text-align: center;
-    width: 20em;
+    width: 30em;
     position: relative;
     border-width: 20px;
     border-style: solid;
-    border-image: url(./src/images/border-img.svg) 22%;
+    border-image: url(/src/images/border-img.svg) 22%;
     padding: 1em;
     margin: 0em auto;
 }
@@ -94,13 +99,15 @@ input {
 /* Mustard image */
 main div label img {
     cursor: pointer;
-    transition: 2s;      
+    transition: 2s; 
 }
 
 main > div {
     position: absolute;
     width: 10em;
-    left: 10em;
+    left: 45%;
+    top: 10em;
+    z-index: 2; 
 }
 
 /* Checkbox for mustard image */
@@ -118,13 +125,13 @@ section img {
 }
 
 section img:nth-child(1) {
-    left: 5em;
-    top: 3em;
+    left: 14em;
+    top: 4em;
     width: 6em;
 }
 
 section img:nth-child(2) {
-    left: 5em;
+    left: 11em;
     top: 14em;
     width: 6em;
 }
@@ -137,47 +144,34 @@ section img:nth-child(3) {
 
 section img:hover {
     opacity: 0;
-    cursor:url("./src/images/cursor.png"), auto;
+    cursor:url("/src/images/cursor.png"), auto;
 }
 
-/* Keyframes */
-@keyframes showSauce {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
+/* Dark / Light mode */
+@media (prefers-color-scheme: dark) {
+    body { 
+        background-color: black; 
+        color: white; 
     }
 }
-
-@keyframes float {
-	0% {
-        transform: translatey(0px);
-        letter-spacing: 5px
-    }
-    25% {
-        transform: translatey(-10px);
-        letter-spacing: 10px;
-	}
-	50% {
-        transform: translatey(-20px);
-        letter-spacing: 5px;
-    }
-    75% {
-        transform: translatey(-10px);
-        letter-spacing: 10px;
-	}
-	100% {
-        transform: translatey(0px);
-        letter-spacing: 5px;
+  
+@media (prefers-color-scheme: light) {
+    body { 
+        background-color: white; 
+        color:  #7E7E7F; 
     }
 }
 
-@keyframes fall {
-	0% {
-        letter-spacing: 25px
-    }
-	100% {
-        letter-spacing: 70px;
-    }
+#body:target {
+    color: #7E7E7F;
+    background-color: white;
+}
+
+#body:target h1{
+    color: black;
+}
+
+#head:target body {
+    background-color: white;
+    color: black;
 }
