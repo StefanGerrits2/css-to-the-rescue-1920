@@ -70,7 +70,7 @@ section {
     position: relative;
     border-width: 20px;
     border-style: solid;
-    border-image: url(/src/images/border-img.svg) 22%;
+    border-image: url(../images/border-img.svg) 22%;
     padding: 1em;
     margin: 0em auto;
 }
