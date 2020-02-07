@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: Hanged-letters;
-    src: url(/src/fonts/Hanged\ Letters.ttf);
+    src: url(../fonts/Hanged\ Letters.ttf);
 }
 
 @font-face {
     font-family: Restaurant;
-    src: url(/src/fonts/Momsdiner-ljjX.ttf);
+    src: url(../fonts/Momsdiner-ljjX.ttf);
 }
 
 body {
@@ -144,7 +144,7 @@ section img:nth-child(3) {
 
 section img:hover {
     opacity: 0;
-    cursor:url("/src/images/cursor.png"), auto;
+    cursor:url("../images/cursor.png"), auto;
 }
 
 /* Dark / Light mode */
