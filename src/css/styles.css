@@ -103,10 +103,6 @@ main div label img {
     transition: 2s; 
 }
 
-main div label img:hover {
-    animation: hover-shake 2s infinite ease-in-out;
-}
-
 main > div {
     position: absolute;
     width: 9em;
@@ -228,21 +224,21 @@ main div input:checked ~ label {
   /* Keyframes */
 @keyframes splash {
     0% {
-      opacity: 0;
-      transform: scale(0);
-      margin-top:0em;
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+        margin-top: 0em;
     }
     60% {
-      opacity: 1;
-      margin-top: 0em;
+        opacity: 1;
+        margin-top: 0em;
     }
     70% {
         opacity: 1;
     }
     100% {
-      transform: scale(100);
-      margin-top: 60em;
-      opacity: 0;
+        transform: scale(100) rotate(100deg);
+        margin-top: 60em;
+        opacity: 0;
     }
 }
 
