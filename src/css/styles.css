@@ -1,5 +1,3 @@
-@import "keyframes.css";
-
 @font-face {
     font-family: Hanged-letters;
     src: url(../fonts/Hanged\ Letters.ttf);
@@ -14,10 +12,13 @@ body {
     background-color: #EFEFEF;
     color: #7E7E7F;
     margin: 0em;
+    overflow-x: hidden;
 }
 
 header > div {
     position: absolute;
+    z-index: 2;
+    cursor: pointer;
 }
 
 header label > h1 {
@@ -70,7 +71,7 @@ section {
     position: relative;
     border-width: 20px;
     border-style: solid;
-    border-image: url(../images/border-img.svg) 22%;
+    border-image: url(../images/border-img_2.svg) 22%;
     padding: 1em;
     margin: 0em auto;
 }
@@ -104,7 +105,7 @@ main div label img {
 
 main > div {
     position: absolute;
-    width: 10em;
+    width: 9em;
     left: 45%;
     top: 10em;
     z-index: 2; 
@@ -145,6 +146,148 @@ section img:nth-child(3) {
 section img:hover {
     opacity: 0;
     cursor:url("../images/cursor.png"), auto;
+}
+
+/* Splash container */
+main div {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Paint label */
+main div label {
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    width: 20%;
+    left: 0%;
+    top: 15%;
+}
+
+/* Paint bucket */ 
+main div label img {
+    width: 10em;
+}
+
+/* Splash yellow */
+main div > img:nth-child(2), 
+main div > img:nth-child(3),
+main div > img:nth-child(4) {
+    width: 10px;
+    height: 10px;
+    background-color: transparant;
+    position: absolute;
+    left: 20%;
+    transition: 2s;
+    opacity: 0;
+    z-index: 3;
+    mix-blend-mode: difference;
+}
+
+/* Splash brown */
+main div > img:nth-child(3) {
+    left: -10%;
+}
+
+/* Splash red */
+main div > img:nth-child(4) {
+    left: -15%;
+}
+
+/* Splash yellow */
+main div input:checked ~ img:nth-child(2) {
+    top: 30%;
+    animation: splash 10s ease-in-out;
+}
+
+/* Splash brown */
+main div input:checked ~ img:nth-child(3) {
+    top: 10%;
+    animation: splash 9s ease-in-out;
+}
+
+/* Splash red */
+main div input:checked ~ img:nth-child(4) {
+    top: 40%;
+    animation: splash 11s ease-in-out;
+}
+
+/* Mustard */
+main div input:checked ~ label {
+    animation: shake 2s ease-in-out;
+}
+  /* Keyframes */
+@keyframes splash {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+      margin-top:0em;
+    }
+    60% {
+      opacity: 1;
+      margin-top: 0em;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+      transform: scale(200);
+      margin-top: 60em;
+      opacity: 0;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateY(0); }
+    20% { transform: translateY(+50px); }
+    40% { transform: translateY(-50px); }
+    60% { transform: translateY(+50px); }
+    80% { 
+        transform: translateY(-50px);
+        transform: rotate(500deg); 
+    }
+    100% { transform: translateY(0px);}
+}
+
+@keyframes showSauce {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes float {
+	0% {
+        transform: translatey(0px);
+        letter-spacing: 5px
+    }
+    25% {
+        transform: translatey(-10px);
+        letter-spacing: 10px;
+	}
+	50% {
+        transform: translatey(-20px);
+        letter-spacing: 5px;
+    }
+    75% {
+        transform: translatey(-10px);
+        letter-spacing: 10px;
+	}
+	100% {
+        transform: translatey(0px);
+        letter-spacing: 5px;
+    }
+}
+
+@keyframes fall {
+	0% {
+        letter-spacing: 25px
+    }
+	100% {
+        letter-spacing: 70px;
+    }
 }
 
 /* Dark / Light mode */
