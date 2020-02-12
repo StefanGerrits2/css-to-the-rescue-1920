@@ -21,6 +21,7 @@ header > div {
     cursor: pointer;
 }
 
+/* Title */
 header label > h1 {
     font-family: Hanged-letters;
     font-size: 3em;
@@ -31,10 +32,9 @@ header label > h1 {
     margin-bottom: 2em;
 }
 
-header > header {
-    position: absolute;
-    text-align: center;
-    z-index: 2;
+header label > h1:hover {
+    animation: float 2s infinite ease-in-out;
+    
 }
 
 header > input[type="checkbox"]:checked + label  {
@@ -103,6 +103,10 @@ main div label img {
     transition: 2s; 
 }
 
+main div label img:hover {
+    animation: hover-shake 2s infinite ease-in-out;
+}
+
 main > div {
     position: absolute;
     width: 9em;
@@ -146,6 +150,11 @@ section img:nth-child(3) {
 section img:hover {
     opacity: 0;
     cursor:url("../images/cursor.png"), auto;
+}
+
+main section img {
+    mix-blend-mode: difference;
+    z-index: 6;
 }
 
 /* Splash container */
@@ -231,10 +240,17 @@ main div input:checked ~ label {
         opacity: 1;
     }
     100% {
-      transform: scale(200);
+      transform: scale(100);
       margin-top: 60em;
       opacity: 0;
     }
+}
+
+@keyframes hover-shake {
+    0% { transform: rotate(0deg); }
+    40% { transform: rotate(10deg);}
+    80% { transform: rotate(-10deg);}
+    100% { transform: rotate(0deg);}
 }
 
 @keyframes shake {
@@ -261,7 +277,7 @@ main div input:checked ~ label {
 @keyframes float {
 	0% {
         transform: translatey(0px);
-        letter-spacing: 5px
+        letter-spacing: 5px;
     }
     25% {
         transform: translatey(-10px);
@@ -283,10 +299,12 @@ main div input:checked ~ label {
 
 @keyframes fall {
 	0% {
-        letter-spacing: 25px
+        letter-spacing: 25px;
+        left: 40%;
     }
 	100% {
         letter-spacing: 70px;
+        left: 40%;
     }
 }
 
@@ -305,16 +323,12 @@ main div input:checked ~ label {
     }
 }
 
+/* Custom swutch light and dark mode */
 #body:target {
     color: #7E7E7F;
     background-color: white;
 }
 
 #body:target h1{
-    color: black;
-}
-
-#head:target body {
-    background-color: white;
     color: black;
 }
