@@ -8,6 +8,7 @@
     src: url(../fonts/Momsdiner-ljjX.ttf);
 }
 
+/* General styling */
 body {
     background-color: #EFEFEF;
     color: #7E7E7F;
@@ -15,14 +16,7 @@ body {
     overflow-x: hidden;
 }
 
-header > div {
-    position: absolute;
-    z-index: 2;
-    cursor: pointer;
-}
-
-/* Title */
-header label > h1 {
+h1 {
     font-family: Hanged-letters;
     font-size: 3em;
     animation: float 4s infinite ease-in-out;
@@ -32,32 +26,25 @@ header label > h1 {
     margin-bottom: 2em;
 }
 
-header label > h1:hover {
-    animation: float 2s infinite ease-in-out;
-    
-}
-
 header > input[type="checkbox"]:checked + label  {
     position: absolute;
-    transition: 2s ease-in;
-    animation: fall 1s;
-    left: 27%;
+    transition: 4s ease-in-out;
+    animation: fall 6s;
+    left: 42%;
+    margin-top: 75em;
+    opacity: 0;
 }
 
-header > input[type="checkbox"]:checked + label h1  {
-    position: absolute;
-    margin-top: 47em;
-    letter-spacing: 70px;
-    transition: 2s ease-in;
-    animation: fall 1s;
-    z-index: 3;
+a {
+    position: relative;
+    z-index: 100;
 }
 
-main > section:first-child  {
-    margin-top: 1em;
-    text-align: center;
+input {
+    display: none;
 }
 
+/* Main */
 main {
     display: flex;
     flex-wrap: wrap;
@@ -65,58 +52,66 @@ main {
     margin-top: -2em;
 }
 
-section {
+main > section:first-child  {
+    margin-top: 1em;
     text-align: center;
-    width: 30em;
+}
+
+/* Articles */
+section, main > div {
+    text-align: center;
+    width: 35em;
     position: relative;
-    border-width: 20px;
+    border-width: 1.2em;
     border-style: solid;
-    border-image: url(../images/border-img_2.svg) 22%;
     padding: 1em;
     margin: 0em auto;
+    margin-bottom: 4em;
+    animation: borders 10s infinite linear;
+    border-radius: 10%;
+    overflow: hidden;
 }
 
-article {
-    margin-bottom: 1em;
+/* Borders */
+main > div, main section {
+    border-image: url(../images/splash-border-img.png) 29%;
+    transition: 2s ease-in-out;
+    box-sizing: content-box;
 }
 
-h2 {
-    font-family: Restaurant;
+main div {
+    min-height: 20em;
 }
 
-summary:focus {
-    outline: none;
+/* Second article */
+main section:nth-child(2) {
+    border-image: url(../images/splash-border-img.png) 29%;
 }
 
-summary::-webkit-details-marker {
-    display: none;
+/* Third article */
+/* main section:nth-child(3) {
+    border-image: url(../images/splash-border-img.png) 25%;
+} */
+
+/* Fourth article */
+/* main section:nth-child(4) {
+    border-image: url(../images/splash-border-img.png) 35%;
+}  */
+
+@keyframes borders {
+    0% {
+        border-image: url(../images/splash-border-img.png) 29%;
+    }
+    50% {
+        border-image: url(../images/splash-border-img.png) 49%;
+        filter: saturate(8);
+    }
+    100% {
+        border-image: url(../images/splash-border-img.png) 29%;
+    }
 }
 
-input {
-    display: none;
-}
-
-/* Images */
-/* Mustard image */
-main div label img {
-    cursor: pointer;
-    transition: 2s; 
-}
-
-main > div {
-    position: absolute;
-    width: 9em;
-    left: 45%;
-    top: 10em;
-    z-index: 2; 
-}
-
-/* Checkbox for mustard image */
-main > div > label > input[type="checkbox"]:checked ~ img {
-    transform: rotate(90deg) translateX(150px);
-    transition: 2s;
-}
-
+/* IMAGES */
 /* Stains */
 section img {
     animation: 3s showSauce;
@@ -125,20 +120,23 @@ section img {
     transition: opacity 2s ease-in-out;
 }
 
+/* First stain */
 section img:nth-child(1) {
     left: 14em;
     top: 4em;
     width: 6em;
 }
 
+/* Second stain */
 section img:nth-child(2) {
     left: 11em;
     top: 14em;
     width: 6em;
 }
 
+/* Third stain */
 section img:nth-child(3) {
-    left: 7em;
+    left: 9em;
     top: 16em;
     width: 6em;
 }
@@ -151,27 +149,6 @@ section img:hover {
 main section img {
     mix-blend-mode: difference;
     z-index: 6;
-}
-
-/* Splash container */
-main div {
-    width: 100vw;
-    height: 100vh;
-}
-
-/* Paint label */
-main div label {
-    cursor: pointer;
-    z-index: 2;
-    position: absolute;
-    width: 20%;
-    left: 0%;
-    top: 15%;
-}
-
-/* Paint bucket */ 
-main div label img {
-    width: 10em;
 }
 
 /* Splash yellow */
@@ -189,39 +166,52 @@ main div > img:nth-child(4) {
     mix-blend-mode: difference;
 }
 
-/* Splash brown */
-main div > img:nth-child(3) {
-    left: -10%;
-}
-
-/* Splash red */
-main div > img:nth-child(4) {
-    left: -15%;
-}
-
 /* Splash yellow */
 main div input:checked ~ img:nth-child(2) {
-    top: 30%;
+    top: 10%;
+    left: 45%;
     animation: splash 10s ease-in-out;
 }
 
-/* Splash brown */
+/* Splash green */
 main div input:checked ~ img:nth-child(3) {
-    top: 10%;
+    top: 20%;
+    left: 20%;
     animation: splash 9s ease-in-out;
 }
 
 /* Splash red */
 main div input:checked ~ img:nth-child(4) {
-    top: 40%;
+    top: 30%;
+    left: 70%;
     animation: splash 11s ease-in-out;
 }
 
-/* Mustard */
-main div input:checked ~ label {
+/* BUCKET */
+/* Bucket */
+main div label {
+    cursor: pointer;
+    z-index: 2;
+    width: 40%;
+    left: 30%;
+    top: 20%;
+    position: absolute;
+    transition: 2s; 
+}
+
+/* Bucket animation */
+main > div input:checked ~ label {
+    position: absolute;
     animation: shake 2s ease-in-out;
 }
-  /* Keyframes */
+
+/* Checkbox for bucket image */
+main > div > label > input[type="checkbox"]:checked ~ img {
+    transform: rotate(90deg) translateX(150px);
+    transition: 2s;
+}
+
+/* Keyframes */
 @keyframes splash {
     0% {
         transform: scale(0) rotate(0deg);
@@ -236,7 +226,7 @@ main div input:checked ~ label {
         opacity: 1;
     }
     100% {
-        transform: scale(100) rotate(100deg);
+        transform: scale(125) rotate(100deg);
         margin-top: 60em;
         opacity: 0;
     }
@@ -295,12 +285,26 @@ main div input:checked ~ label {
 
 @keyframes fall {
 	0% {
-        letter-spacing: 25px;
-        left: 40%;
+        letter-spacing: 5px;
+        left: 42%;
+    }
+    25% {
+        letter-spacing: 100px;
+        left: 80%;
+    }
+    50% {
+        letter-spacing: 5px;
+        left: 10%;
+        opacity: 1;
+    }
+    75% {
+        letter-spacing: 100px;
+        left: 80%;
+        opacity: 0;
     }
 	100% {
-        letter-spacing: 70px;
-        left: 40%;
+        letter-spacing: 5px;
+        left: 10%;
     }
 }
 
