@@ -13,6 +13,7 @@ body {
     background-color: #EFEFEF;
     color: #7E7E7F;
     margin: 0em;
+    height: 100%;
     overflow-x: hidden;
 }
 
@@ -24,6 +25,15 @@ h1 {
     text-align: center;
     margin-top: .22em;
     margin-bottom: 2em;
+}
+
+ul {
+    padding: 0em;
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 1em;
 }
 
 header > input[type="checkbox"]:checked + label  {
@@ -42,6 +52,40 @@ a {
 
 input {
     display: none;
+}
+
+img {
+    image-rendering: crisp-edges;
+}
+
+body > header {
+    height: 12em;
+}
+
+/* Styling light and dark mode button */
+body > header > div {
+    display: flex;
+    margin: 0em auto;
+    width: 9em;
+    margin-top: -5em;
+}
+
+#light, #dark {
+    display: block;
+    text-decoration: none;
+    padding: 1em;
+}
+
+#light {
+    border: 4px solid black;
+    background-color: white;
+    color: black;
+}
+
+#dark {
+    background-color: black;
+    border: 4px solid white;
+    color: white;
 }
 
 /* Main */
@@ -69,12 +113,10 @@ section, main > div {
     margin-bottom: 4em;
     animation: borders 10s infinite linear;
     border-radius: 10%;
-    /* overflow: hidden; */
 }
 
 /* Borders */
 main > div, main section {
-    border-image: url(../images/splash-border-img.png) 29%;
     transition: 2s ease-in-out;
     box-sizing: content-box;
 }
@@ -82,21 +124,6 @@ main > div, main section {
 main div {
     min-height: 20em;
 }
-
-/* Second article */
-/* main section:nth-child(2) {
-    border-image: url(../images/splash-border-img.png) 29%;
-} */
-
-/* Third article */
-/* main section:nth-child(3) {
-    border-image: url(../images/splash-border-img.png) 25%;
-} */
-
-/* Fourth article */
-/* main section:nth-child(4) {
-    border-image: url(../images/splash-border-img.png) 35%;
-}  */
 
 @keyframes borders {
     0% {
@@ -108,6 +135,19 @@ main div {
     }
     100% {
         border-image: url(../images/splash-border-img.png) 29%;
+    }
+}
+
+@keyframes borders2 {
+    0% {
+        border-image: url(../images/splash-border-img2.png) 29%;
+    }
+    50% {
+        border-image: url(../images/splash-border-img2.png) 49%;
+        filter: saturate(8);
+    }
+    100% {
+        border-image: url(../images/splash-border-img2.png) 29%;
     }
 }
 
@@ -173,11 +213,19 @@ main div input:checked ~ img:nth-child(2) {
     animation: splash 10s ease-in-out;
 }
 
+main div input:checked ~ img:nth-child(2):hover {
+    animation-play-state: paused;
+}
+
 /* Splash green */
 main div input:checked ~ img:nth-child(3) {
     top: 20%;
     left: 20%;
     animation: splash 9s ease-in-out;
+}
+
+main div input:checked ~ img:nth-child(3):hover {
+    animation-play-state: paused;
 }
 
 /* Splash red */
@@ -187,8 +235,12 @@ main div input:checked ~ img:nth-child(4) {
     animation: splash 11s ease-in-out;
 }
 
+main div input:checked ~ img:nth-child(4):hover {
+    animation-play-state: paused;
+}
+
 /* BUCKET */
-/* Bucket */
+/* Bucket image*/
 main div label {
     cursor: pointer;
     z-index: 2;
@@ -323,7 +375,7 @@ main > div > label > input[type="checkbox"]:checked ~ img {
     }
 }
 
-/* Custom swutch light and dark mode */
+/* Custom switch light and dark mode */
 #body:target {
     color: #7E7E7F;
     background-color: white;
@@ -331,4 +383,8 @@ main > div > label > input[type="checkbox"]:checked ~ img {
 
 #body:target h1{
     color: black;
+}
+
+#body:target section, #body:target main > div {
+    animation: borders2 10s infinite linear;
 }
