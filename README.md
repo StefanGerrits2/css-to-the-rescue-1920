@@ -68,6 +68,14 @@ Choose restriction(s)
     * `filter` 
     * `letterspacing`
 
+
+## Draggable item with CSS
+
+I've put a gif in here to show what this brush paint is for. You need to drag the bottom right corner of the image to be able to drag it since it's a resize box.
+
+![gif css](https://user-images.githubusercontent.com/45566396/75456095-62ff4480-597a-11ea-9cfc-0850045466d1.gif)
+
+
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
 <!-- ☝️ replace this description with a description of your own work -->
