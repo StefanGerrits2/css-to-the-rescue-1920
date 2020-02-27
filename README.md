@@ -1,49 +1,72 @@
-# CSS to the Rescue @cmda-minor-web 19-20
+## Assignment
 
-_This course is in English_
+Create an innovative, experimantal, yet pleasurable user experience by using CSS and SVG. No Javascript allowed.
 
-In this three week course you are going to create an innovative, experimantal, yet pleasurable user experience by using CSS and SVG. No Javascrpt allowed.
+Pick atleast one contexts and try to use some restrictions
 
-## Learning goals
-- _You understand the broader scope of CSS: You can show that CSS can be used for more than just styling web pages._
-- _You understand the progressive enhancement parts of CSS: You can show that you can use the cascade, inheritance and specificity in your project_
-- _You understand the interactive parts of CSS: Is the UX fully enhanced within in given CSS scope?_
-- _You have been experimenting: Have the learning goals been stretched?_
+## Add _one_ contexts
 
-[Rubric](https://docs.google.com/spreadsheets/d/1Xv48MSiACNmnM6nXpGGUb8mJDC459uSaxJszO_zLEp8/edit?usp=sharing)
+You have to add at least one extra context to your site
 
-## Programm
+- [ ] print-stylesheet
+- [X] prefers-reduced-motion
+- [X] dark-mode
+- [ ] input type (pointer)
+- [ ] <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">pick a better one</a>
 
-### Week 1 - 👁 C what you did there
+### My pick
 
-[See all the details of week 1 here](week1/).
+I picked dark mode to add as a context. My design corresponds to your preferred device light or dark mode. I also build in a switch to be able to toggle between them.
 
-Goals of this week: 
+## Pick a restriction(s)
 
-- Be inspired
-- Discuss hot CSS topics.
-- Get going!
+Choose restriction(s)
 
-<!-- [Opdrachten](https://drive.google.com/open?id=1OVhWQNaCgSluYviTKKWcApkyPd23xow1PiExb8GYANM) -->
+- [ ] When SVG meets CSS: Shapes / Masks / SVG
+- [ ] Two colours
+- [ ] Less than 5kb CSS *(not as an excuses for lazyness, hahaha)*
+- [ ] No squares, no rectangles, no circles, no triangles
+- [ ] Design must be visually appealing and it must meet <a href="https://www.w3.org/TR/WCAG20/#guidelines">Level AAA conformance</a> of the WCAG.
+- [ ] Solar powered website
+- [X] Responsive without media queries
+- [ ] Design responds to weather/time
+- [ ] Design responds to connectivity
+- [ ] Design responds to battery level
+- [ ] Design responds to language setting
+- [ ] Design responding language setting / Japanese / English / Greek / Mongolian
+- [ ] Create a great experience only with pop-ups, advertising banners and carousels!
 
-<!-- [Slides](https://drive.google.com/open?id=1Rjl9xqXoKniQSRJPdkU1O5YwWC33SJK8KiV0a-H_xZU) -->
+### My picks
 
-### Week 2 - Create Stuff, 🙃 Smile 
+* I picked responsiveness without media queries because I've never done this before and was ready for a challenge. I used flex for this.
 
-This week’s goals: Moar inspiration, create stuff, break stuff, and learn from each other.
+* I also picked reduce motion because my website has a lot of animations. This way, people who want reduce motions will still be able to see my website.
 
-<!-- [Opdrachten](https://drive.google.com/open?id=1GMDTdW3LycAYpZSFI6gk_lrKrx8-zLWrNh69aaVEH5Y) -->
+## Some experiments
 
-<!-- [Slides](https://drive.google.com/open?id=1IqQeu1m0dQiSC_KCvrn8eencAgtYe7X6qT-gm0n9Bmc) -->
+* [Simple checkbox hack](https://codepen.io/StefanGerrits/pen/BaNaGYW)
+* [Target property](https://codepen.io/StefanGerrits/pen/xxGxQMv)
+* [Splash animation with checkboxes](https://vizhub.com/StefanGerrits2/b167caa7051e46c9a7642a634574c39b?edit=files&file=index.html)
 
-### Week 3 - 🎪 Show time
+## Learnings
 
-Goals: Blow us away.
-
-<!-- [Opdrachten](https://drive.google.com/open?id=13pKQu72pshaEzKw9q5JHLa-aop85nMP6nDCdqioWjoQ) -->
-
-<!-- [Slides](https://drive.google.com/open?id=1BSzGYNLMgtHD4HRnK7f0DgyTv4Pg3xsQwD_eYNo7v0Y) -->
-
+* `checkbox hack with css`
+* `+ selector`
+* `border-image`
+* `filter`
+* `cursor: url()`
+* `mix-blend-mode`
+* `animation-play-state`
+* `letter-spacing`
+* `transform: scale()`
+* `:after & :before selectors`
+* `resize`
+* `@media (prefers-color-scheme: light/dark)`
+* `:target selector`
+* `keyframes with: `
+    * `border-image`
+    * `filter` 
+    * `letterspacing`
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 

@@ -54,10 +54,6 @@ input {
     display: none;
 }
 
-img {
-    image-rendering: crisp-edges;
-}
-
 body > header {
     height: 12em;
 }
@@ -113,6 +109,7 @@ section, main > div {
     margin-bottom: 4em;
     animation: borders 10s infinite linear;
     border-radius: 10%;
+    height: 30em;
 }
 
 /* Borders */
@@ -125,30 +122,39 @@ main div {
     min-height: 20em;
 }
 
-@keyframes borders {
-    0% {
-        border-image: url(../images/splash-border-img.png) 29%;
-    }
-    50% {
-        border-image: url(../images/splash-border-img.png) 49%;
-        filter: saturate(8);
-    }
-    100% {
-        border-image: url(../images/splash-border-img.png) 29%;
-    }
+/* Third section */
+main > section:nth-child(3) {
+    background-image: url('../images/background-paint.png');
+    background-clip: content-box;
+    background-size: cover;
+    overflow: hidden;
 }
 
-@keyframes borders2 {
-    0% {
-        border-image: url(../images/splash-border-img2.png) 29%;
-    }
-    50% {
-        border-image: url(../images/splash-border-img2.png) 49%;
-        filter: saturate(8);
-    }
-    100% {
-        border-image: url(../images/splash-border-img2.png) 29%;
-    }
+main > section:nth-child(3) > div {
+    background: transparent;
+    min-width: 26%;
+    min-height: 28%;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    resize: both;
+    position: relative;
+}
+
+main > section:nth-child(3) > div:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10em;
+    height: 10em;
+    visibility: visible;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../images/brush-2.svg');
+    mix-blend-mode: darken;
+    animation: changeFilter 5s infinite;   
 }
 
 /* IMAGES */
@@ -183,7 +189,7 @@ section img:nth-child(3) {
 
 section img:hover {
     opacity: 0;
-    cursor:url("../images/cursor.png"), auto;
+    cursor: url("../images/cursor.png"), auto;
 }
 
 main section img {
@@ -258,7 +264,7 @@ main > div input:checked ~ label {
 }
 
 /* Checkbox for bucket image */
-main > div > label > input[type="checkbox"]:checked ~ img {
+main > div > label > input[type="checkbox"]:checked + img {
     transform: rotate(90deg) translateX(150px);
     transition: 2s;
 }
@@ -360,11 +366,68 @@ main > div > label > input[type="checkbox"]:checked ~ img {
     }
 }
 
+@keyframes changeFilter {
+    0% { transform: rotate(10deg);}
+    50% { 
+        transform: rotate(-10deg); 
+    }
+    100% { transform: rotate(10deg);}
+}
+
+@keyframes borders {
+    0% {
+        border-image: url(../images/splash-border-img.png) 29%;
+    }
+    50% {
+        border-image: url(../images/splash-border-img.png) 49%;
+        filter: saturate(8);
+    }
+    100% {
+        border-image: url(../images/splash-border-img.png) 29%;
+    }
+}
+
+@keyframes borders2 {
+    0% {
+        border-image: url(../images/splash-border-img2.png) 29%;
+    }
+    50% {
+        border-image: url(../images/splash-border-img2.png) 49%;
+        filter: saturate(8);
+    }
+    100% {
+        border-image: url(../images/splash-border-img2.png) 29%;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    section, main > div {
+        animation: none;
+        filter: saturate(8);
+    }
+
+    h1 {
+        animation: none;
+        letter-spacing: 7px;
+    }
+
+    body > header > div {
+        display: none;
+    }
+}
+
 /* Dark / Light mode */
 @media (prefers-color-scheme: dark) {
     body { 
         background-color: black; 
         color: white; 
+    }
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        section, main > div {
+            border-image: url(../images/splash-border-img.png) 29%;
+        }
     }
 }
   
@@ -372,6 +435,12 @@ main > div > label > input[type="checkbox"]:checked ~ img {
     body { 
         background-color: white; 
         color:  #7E7E7F; 
+    }
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        section, main > div {
+            border-image: url(../images/splash-border-img2.png) 29%;
+        }
     }
 }
 
